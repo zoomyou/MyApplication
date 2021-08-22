@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/captchaView"
+        android:layout_width="344dp"
+        android:layout_height="274dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="505dp"
+        android:src="@drawable/disconnect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.277" />
+
+    <EditText
+        android:id="@+id/inputData"
+        android:layout_width="291dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="38dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/openClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/captchaView" />
+
+    <Button
+        android:id="@+id/openClose"
+        android:layout_width="149dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/open"
+        android:onClick="openOrClose"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputData" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/submit"
+        android:onClick="submit"
+        app:layout_constraintBottom_toTopOf="@+id/abandon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openClose" />
+
+    <Button
+        android:id="@+id/abandon"
+        android:layout_width="148dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="101dp"
+        android:text="@string/abandon"
+        android:onClick="abandon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
