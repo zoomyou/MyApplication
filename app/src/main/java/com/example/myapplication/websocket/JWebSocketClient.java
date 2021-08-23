@@ -2,6 +2,8 @@ package com.example.myapplication.websocket;
 
 import android.util.Log;
 
+import com.example.myapplication.util.utils;
+
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.drafts.Draft_6455;
 import org.java_websocket.handshake.ServerHandshake;
@@ -15,21 +17,27 @@ public class JWebSocketClient extends WebSocketClient {
 
     @Override
     public void onOpen(ServerHandshake handshakedata) {
-        Log.e("JWebSocketClient", "onOpen()");
+        Log.i("JWebSocketClient", "onOpen()");
+
+        utils.setOpen(true);
     }
 
     @Override
     public void onMessage(String message) {
-        Log.e("JWebSocketClient", "onMessage()");
+        Log.i("JWebSocketClient", "onMessage()");
     }
 
     @Override
     public void onClose(int code, String reason, boolean remote) {
-        Log.e("JWebSocketClient", "onClose()");
+        Log.i("JWebSocketClient", "onClose()");
+
+        utils.setOpen(false);
     }
 
     @Override
     public void onError(Exception ex) {
-        Log.e("JWebSocketClient", "onError()");
+        Log.e("JWebSClient: onError()", ex.getStackTrace().toString());
+//        Log.e("JWebSClient: onError()", ex.getCause().getMessage());
+        Log.e("JWebSClient: onError()", ex.getMessage());
     }
 }
