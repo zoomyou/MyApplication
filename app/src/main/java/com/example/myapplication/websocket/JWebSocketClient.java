@@ -11,6 +11,7 @@ import org.java_websocket.handshake.ServerHandshake;
 import java.net.URI;
 
 public class JWebSocketClient extends WebSocketClient {
+    private boolean isWorking = false;
     public JWebSocketClient(URI serverUri) {
         super(serverUri);
     }
@@ -39,5 +40,13 @@ public class JWebSocketClient extends WebSocketClient {
         Log.e("JWebSClient: onError()", ex.getStackTrace().toString());
 //        Log.e("JWebSClient: onError()", ex.getCause().getMessage());
         Log.e("JWebSClient: onError()", ex.getMessage());
+    }
+
+    public boolean isWorking() {
+        return isWorking;
+    }
+
+    public void setWorking(boolean working) {
+        isWorking = working;
     }
 }
