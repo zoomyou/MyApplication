@@ -4,4 +4,5 @@
     <string name="close">结束</string>
     <string name="submit">提交</string>
     <string name="abandon">放弃</string>
+    <string name="clear">清空</string>
 </resources>
